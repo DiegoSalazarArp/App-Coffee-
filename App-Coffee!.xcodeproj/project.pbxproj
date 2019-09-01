@@ -22,6 +22,7 @@
 		C7799569231A324F000D73CE /* AddCoffeeOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7799568231A324F000D73CE /* AddCoffeeOrderViewModel.swift */; };
 		C779956B231A33B9000D73CE /* CoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779956A231A33B9000D73CE /* CoffeeViewModel.swift */; };
 		C779956D231A3B4E000D73CE /* AddCoffeeOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779956C231A3B4E000D73CE /* AddCoffeeOrderView.swift */; };
+		C7AE3280231B34B40090BE2F /* OrderTotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE327F231B34B40090BE2F /* OrderTotalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C7799568231A324F000D73CE /* AddCoffeeOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeOrderViewModel.swift; sourceTree = "<group>"; };
 		C779956A231A33B9000D73CE /* CoffeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewModel.swift; sourceTree = "<group>"; };
 		C779956C231A3B4E000D73CE /* AddCoffeeOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeOrderView.swift; sourceTree = "<group>"; };
+		C7AE327F231B34B40090BE2F /* OrderTotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTotalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				C7799547231A1212000D73CE /* ContentView.swift */,
 				C7799564231A1EF6000D73CE /* OrderListView.swift */,
 				C779956C231A3B4E000D73CE /* AddCoffeeOrderView.swift */,
+				C7AE327F231B34B40090BE2F /* OrderTotalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				C7799567231A2E31000D73CE /* CreateOrderResponse.swift in Sources */,
 				C779956D231A3B4E000D73CE /* AddCoffeeOrderView.swift in Sources */,
 				C7799546231A1212000D73CE /* SceneDelegate.swift in Sources */,
+				C7AE3280231B34B40090BE2F /* OrderTotalView.swift in Sources */,
 				C779955F231A164B000D73CE /* Webservice.swift in Sources */,
 				C779956B231A33B9000D73CE /* CoffeeViewModel.swift in Sources */,
 				C779955B231A1569000D73CE /* Order.swift in Sources */,

@@ -11,7 +11,7 @@ import SwiftUI
 struct AddCoffeeOrderView: View {
     
     @ObservedObject private var addCoffeeOrderVM = AddCoffeeOrderViewModel()
-    
+    @Binding var isPresented: Bool
     
     var body: some View {
         NavigationView{
@@ -28,11 +28,29 @@ struct AddCoffeeOrderView: View {
                         ForEach(addCoffeeOrderVM.coffeeList, id:\.name) { coffee in
                             
                             CoffeeCellView(coffee: coffee, selection: self.$addCoffeeOrderVM.coffeeName)
+                            
                         }
                     }
-                    
+                    Section(header: Text("Select Size").font(.body), footer: OrderTotalView(total: self.addCoffeeOrderVM.total)) {
+                        Picker("", selection: $addCoffeeOrderVM.size) {
+                            Text("Small").tag("Small")
+                            Text("Medium").tag("Medium")
+                            Text("Large").tag("Large")
+                            
+                        }.pickerStyle(SegmentedPickerStyle())
+                    }
                 }
+                HStack {
+                    Button("Place Order") {
+                        self.addCoffeeOrderVM.placeOrder()
+                        self.isPresented = false
+                    }
+                }.padding(EdgeInsets(top: 12, leading: 100, bottom: 12, trailing: 100))
+                    .foregroundColor(Color.white)
+                    .background(Color.green)
+                .cornerRadius(10)
             }
+        .navigationBarTitle("Add Order")
         }
 
     }
@@ -40,7 +58,7 @@ struct AddCoffeeOrderView: View {
 
 struct AddCoffeeOrderView_Previews: PreviewProvider {
     static var previews: some View {
-        AddCoffeeOrderView()
+        AddCoffeeOrderView(isPresented: .constant(false))
     }
 }
 

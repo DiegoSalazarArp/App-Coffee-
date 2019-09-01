@@ -19,7 +19,7 @@ class OrderListViewModel: ObservableObject {
     
     
     func fetchOrders() {
-        Webservice().getAllOrder() { orders in
+        Webservice().getAllOrders() { orders in
             if let orders = orders {
                 self.orders = orders.map(OrderViewModel.init)
             }

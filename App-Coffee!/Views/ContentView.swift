@@ -12,8 +12,32 @@ struct ContentView: View {
     
     @ObservedObject private var orderListVM = OrderListViewModel()
     
+    @State private var showModal: Bool = false
+    
     var body: some View {
-        OrderListView(orders: self.orderListVM.orders)
+        NavigationView {
+            OrderListView(orders: self.orderListVM.orders)
+            .navigationBarTitle("Coffee App")
+                .navigationBarItems(leading: Button(action: reloadOrders) {
+                    Image(systemName: "arrow.clockwise")
+                        .foregroundColor(Color.gray)
+                    
+                    }, trailing: Button(action: showAddCoffeeOrderView) {
+                        Image(systemName: "plus")
+                            .foregroundColor(Color.gray)
+                })
+            
+            
+                .sheet(isPresented: self.$showModal) {
+                    AddCoffeeOrderView(isPresented: self.$showModal)
+            }
+        }
+    }
+    private func reloadOrders() {
+        self.orderListVM.fetchOrders()
+    }
+    private func showAddCoffeeOrderView() {
+        self.showModal = true
     }
 }
 
